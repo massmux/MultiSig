@@ -36,9 +36,12 @@ class TestnetMultisig:
         return multisig_descriptor
 
     def add_recipient(self, recipient):
-        # format: ('tb1qu8l6t60jcv8zhpncyx0h9c2d8cfj3n73qda3cg', 0.0003, 'btc')
-        self.recipients.append(recipient)
-        return recipient
+        # format: ('tb1qu8l6t60jcv8zhpncyx0h9c2d8cfj3n73qda3cg', 0.0003)
+        b = list(recipient)
+        b.append('btc')
+        b = tuple(b)
+        self.recipients.append(b)
+        return self.recipients
 
 
     def get_transaction(self):
