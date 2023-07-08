@@ -27,13 +27,13 @@ class TestnetMultisig:
         self.pub = public_list_bin
         self.wif.append(first_private)
         self.priv.append(PrivateKeyTestnet(first_private))
-        multisig_descriptor = {'public_keys': self.pubhex,
+        multisig_data = {'public_keys': self.pubhex,
                                'address' : multisig.address,
                                'segwit_address' : multisig.segwit_address,
                                'required_keys': self.m,
                                'total_keys' : self.n,
                                }
-        return multisig_descriptor
+        return multisig_data
 
     def add_recipient(self, recipient):
         # format: ('tb1qu8l6t60jcv8zhpncyx0h9c2d8cfj3n73qda3cg', 0.0003)
@@ -44,8 +44,8 @@ class TestnetMultisig:
         return self.recipients
 
 
-    def get_transaction(self):
-        tx = self.multisig.create_transaction(self.recipients)
+    def get_transaction(self,minerfee):
+        tx = self.multisig.create_transaction(self.recipients,replace_by_fee=True,fee=minerfee)
         return tx
 
 
