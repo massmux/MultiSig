@@ -1,4 +1,6 @@
-# Create Multisignature address with single keys and do signatures
+# Create Multisignature address with single keys and make signatures
+
+If you have, for example, 3 single wallets (paper wallets) we can combine for getting a 2/3 multisignature single wallet. So a single address in which funds need 2 signatures (on 3) to be spent. This library allows creating such multisignature single-address wallet and collecting the signatures to spend it.
 
 
 ## Create Multisig and add the first signature
@@ -18,7 +20,7 @@ In the following example we create a multisig 2/3, using 3 public keys and use t
 '01000000000102b8759fda2a05ecf0f1b9f875fc882d1ce0e238fd14f55d19c724b5420697af6f01000000232200202cec399422528959e7f9e4f6034ad70127989573c25da764b96f64f2db196d23ffffffffa63220a32863c605d13d7e3d05572a8f1e5a233d43a127337783965d85baa93000000000232200202cec399422528959e7f9e4f6034ad70127989573c25da764b96f64f2db196d23ffffffff0250c3000000000000160014e1ffa5e9f2c30e2b8678219f72e14d3e1328cfd1113201000000000017a91469cd506c6a35cc06a84e4ec8f31175a71da2018687040047304402206a12f77ed7607856693a787ddb740df9467e023107a5c248ddccf92a8422468f02201c51b17d3714593b61c020e24536bdf4e189640c841f72ab2fb8e3df89204caf010069522102ecec779f1edfad7f2a37d3ea3fa954fa3df8ff8f7b42a88f28b035e28e79b0e02102ed3f28da4ff57fe55d97f57e85360a8599093e3c30c37e85a1b9edf7dc07be342103638f7c91c2a56a6b2eac5cf2c545918e447d96973e560cb4e22baade136096c453ae040047304402201a39e72dea9e4693080378f73ce3fb0e3dd7b9a87fb0c29c6f623fca300ceced02205a45db1437077c1b6badbbbb5fb154c47a1754b3d951f7661e3eedda14577ce8010069522102ecec779f1edfad7f2a37d3ea3fa954fa3df8ff8f7b42a88f28b035e28e79b0e02102ed3f28da4ff57fe55d97f57e85360a8599093e3c30c37e85a1b9edf7dc07be342103638f7c91c2a56a6b2eac5cf2c545918e447d96973e560cb4e22baade136096c453ae00000000'
 ```
 
-## Add the second signature
+## Add the second (or n) signature
 
 Now we can add the signature from the second private key to an already signed transaction with the first key
 
